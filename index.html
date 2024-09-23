@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.css">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.12/dist/css/uikit.min.css" />
   <script src="script.js" defer></script>
   <title>Agenda</title>
 </head>
@@ -18,7 +20,7 @@
   <main>
     <button type="button" class="button green cadastro" id="cadastrarContato"></button>
     <!-- Cabeçalho da tabela -->
-    <table id="contacts-table" class="table">
+    <table id="contacts-table" class="table uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle ">
       <thead>
         <tr>
           <th>Nome</th>
@@ -27,7 +29,7 @@
           <th>Ação</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="teste">
 
       </tbody>
     </table>
