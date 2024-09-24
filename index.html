@@ -17,9 +17,33 @@
 <body>
   <!-- Cabeçalho -->
   <header>
-    <h1 class="title">Minha Agenda</h1>
+    <nav class="uk-navbar-container uk-margin" id="navbar">
+      <div class="uk-container" id="container">
+        <div uk-navbar>
+
+          <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" id="toggle" href="#">
+              <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </nav>
   </header>
-  <main>
+  <div>
+    <nav class="uk-navbar-container" id="card">
+      <div class="uk-container" id="container">
+        <div uk-navbar>
+          <a class="uk-navbar-toggle" href="#">
+            <img src="./img/person-circle-outline.svg" width="80" height="80" alt="Ícone" />
+            <span class="uk-margin-small-left">Gerenciamento de usuário</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <main id="main">
     <button type="button" class="button green cadastro" id="cadastrarContato" uk-tooltip="title: Adiconar contato"></button>
     <!-- Cabeçalho da tabela -->
     <table id="contacts-table" class="table uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle ">
