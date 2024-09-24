@@ -6,8 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/styles.css">
+  <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.12/dist/css/uikit.min.css" />
   <script src="script.js" defer></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.12/dist/js/uikit.min.js"></script>
   <title>Agenda</title>
 </head>
 
@@ -17,7 +20,7 @@
     <h1 class="title">Minha Agenda</h1>
   </header>
   <main>
-    <button type="button" class="button green cadastro" id="cadastrarContato"></button>
+    <button type="button" class="button green cadastro" id="cadastrarContato" uk-tooltip="title: Adiconar contato"></button>
     <!-- Cabeçalho da tabela -->
     <table id="contacts-table" class="table uk-table uk-table-divider uk-table-hover uk-table-small uk-table-middle ">
       <thead>
