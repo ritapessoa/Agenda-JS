@@ -1,0 +1,41 @@
+.button {
+  border-style: none;
+  height: 40px;
+  padding: 6px 12px;
+  background-color: black;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: box-shadow 0.6s ease;
+  border-radius: 4px;
+}
+
+#teste {
+  background-color: red;
+}
+
+button.blue {
+  background-color: #1fb6ff;
+}
+
+button.green {
+  background-color: #13ce66;
+}
+
+button.red {
+  background-color: #ff4949;
+}
+
+.cadastro {
+  background: url(../img/add-circle-outline.svg) no-repeat center;
+}
+.editar {
+  background: url(../img/create-outline.svg) no-repeat center;
+}
+.excluir {
+  background: url(../img/trash-bin-outline.svg) no-repeat center;
+}
+
+.button:hover {
+  box-shadow: inset 200px 0 0 #00000055;
+}
