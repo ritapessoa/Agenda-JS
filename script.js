@@ -1,19 +1,19 @@
-'use strict';
+"use strict";
 // Abre e fecha o Modal
 const openModal = () => {
-  document.getElementById('modal').classList.add('active');
+  document.getElementById("modal").classList.add("active");
 };
 
 const closeModal = () => {
   clearFields();
-  document.getElementById('modal').classList.remove('active');
+  document.getElementById("modal").classList.remove("active");
 };
 
 // função Get e Set localStorage
 const getLocalStorage = () =>
-  JSON.parse(localStorage.getItem('dados-Contato')) ?? [];
+  JSON.parse(localStorage.getItem("dados-Contato")) ?? [];
 const setLocalStorage = (dadosContato) =>
-  localStorage.setItem('dados-Contato', JSON.stringify(dadosContato));
+  localStorage.setItem("dados-Contato", JSON.stringify(dadosContato));
 
 //Create
 const createContato = (contato) => {
@@ -38,26 +38,26 @@ const deleteContato = (index) => {
 };
 // Valida campos
 const isValidFields = () => {
-  return document.getElementById('form').reportValidity();
+  return document.getElementById("form").reportValidity();
 };
 
 //Limpa os inputs
 const clearFields = () => {
-  const fields = document.querySelectorAll('.modal-field');
-  fields.forEach((field) => (field.value = ''));
+  const fields = document.querySelectorAll(".modal-field");
+  fields.forEach((field) => (field.value = ""));
 };
 
 //Interação com o usuário
 const saveContato = () => {
   if (isValidFields()) {
     const contato = {
-      nome: document.getElementById('nome').value,
-      email: document.getElementById('email').value,
-      celular: document.getElementById('celular').value,
+      nome: document.getElementById("nome").value,
+      email: document.getElementById("email").value,
+      celular: document.getElementById("celular").value,
     };
     //Envia para o Local Storage
-    const index = document.getElementById('nome').dataset.index;
-    if (index == 'new') {
+    const index = document.getElementById("nome").dataset.index;
+    if (index == "new") {
       createContato(contato);
       updateTable();
       closeModal();
@@ -71,7 +71,7 @@ const saveContato = () => {
 
 //Cria uma linha para cada contato
 const createRow = (contato, index) => {
-  const newRow = document.createElement('tr');
+  const newRow = document.createElement("tr");
   newRow.innerHTML = `
           <td>${contato.nome}</td>
           <td>${contato.email}</td>
@@ -82,11 +82,11 @@ const createRow = (contato, index) => {
           </td> 
           `;
   // inseri no html
-  document.querySelector('#contacts-table>tbody').appendChild(newRow);
+  document.querySelector("#contacts-table>tbody").appendChild(newRow);
 };
 //Limpar as linhas
 const clearTable = () => {
-  const rows = document.querySelectorAll('#contacts-table>tbody tr');
+  const rows = document.querySelectorAll("#contacts-table>tbody tr");
   rows.forEach((row) => row.parentNode.removeChild(row));
 };
 
@@ -99,10 +99,10 @@ const updateTable = () => {
 
 //Preenche os campos
 const fillFields = (contato) => {
-  document.getElementById('nome').value = contato.nome;
-  document.getElementById('email').value = contato.email;
-  document.getElementById('celular').value = contato.celular;
-  document.getElementById('nome').dataset.index = contato.index; //editar
+  document.getElementById("nome").value = contato.nome;
+  document.getElementById("email").value = contato.email;
+  document.getElementById("celular").value = contato.celular;
+  document.getElementById("nome").dataset.index = contato.index; //editar
 };
 
 // Editar contato
@@ -111,21 +111,21 @@ const editContato = (index) => {
   contato.index = index;
   fillFields(contato);
   document.querySelector(
-    '.modal-header>h2',
+    ".modal-header>h2"
   ).textContent = `Editando ${contato.nome}`;
   openModal();
 };
 
 const editDelete = (event) => {
-  if (event.target.type == 'button') {
-    const [action, index] = event.target.id.split('-');
+  if (event.target.type == "button") {
+    const [action, index] = event.target.id.split("-");
 
-    if (action == 'editar') {
+    if (action == "editar") {
       editContato(index);
     } else {
       const contato = readContato()[index];
       const response = confirm(
-        `Deseja realmente excluir o contato ${contato.nome}`,
+        `Deseja realmente excluir o contato ${contato.nome}`
       );
       if (response) {
         deleteContato(index);
@@ -139,15 +139,15 @@ updateTable();
 
 // Eventos
 document
-  .getElementById('cadastrarContato')
-  .addEventListener('click', openModal);
+  .getElementById("cadastrarContato")
+  .addEventListener("click", openModal);
 
-document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById("modalClose").addEventListener("click", closeModal);
 
-document.getElementById('salvar').addEventListener('click', saveContato);
+document.getElementById("salvar").addEventListener("click", saveContato);
 
 document
-  .querySelector('#contacts-table>tbody')
-  .addEventListener('click', editDelete);
+  .querySelector("#contacts-table>tbody")
+  .addEventListener("click", editDelete);
 
-document.getElementById('cancelar').addEventListener('click', closeModal);
+document.getElementById("cancelar").addEventListener("click", closeModal);
