@@ -1,12 +1,14 @@
+// URL da API
 const url =
   "https://wms-backend-g8-380719778871.southamerica-east1.run.app/api/Client";
 
-function fetchClientes(url) {
+//
+function fetchClientes() {
   fetch(url)
-    .then((response) => response.json())
-    .then((clientes) => {
-      clientes.forEach((cliente, index) => {
-        createCliente(cliente, index);
+    .then((r) => r.json())
+    .then((json) => {
+      json.forEach((cliente) => {
+        createCliente(cliente);
         console.log(cliente);
       });
     });
